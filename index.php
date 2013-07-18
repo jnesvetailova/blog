@@ -33,18 +33,21 @@
             <h4>Login</h4>
             <form action="login.php" method="POST">
                 Username: <input type="text" name="username"></input><br />
-                Password: <input type="password" name="password"></input><br />
-                <button value="Submit" class="send_button" onclick="this.form.submit();">Login</button>
+                Password: <input type="password" name="passwd"></input><br />
+<!--                <button value="Submit" class="send_button" onclick="this.form.submit();">Login</button>-->
+                <input type="submit" name="submit" value="Login">
             </form>
         </div>
         <div>
-            <h4>Create Account!</h4>
+            <h4>Register Account!</h4>
             <form action="create.php" method="POST">
                 Please enter a username: <input type="text" name="username"></input><br />
                 Choose a password: <input type="password" name="password"></input><br />
                 Confirm password: <input type="password" name="password2"></input><br />
                 Name your blog: <input type="text" name="title"></input><br />
-                <button value="Submit" class="send_button" onclick="this.form.submit();">Create</button>
+                What will your blog be about? <input type="text" name="description"></input><br />
+                <!--                <button value="Submit" class="send_button" onclick="this.form.submit();">Register</button>-->
+                <input type="submit" name="submit" value="Register">
             </form>
         </div>
     </body>
