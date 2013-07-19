@@ -10,16 +10,8 @@
         <h1>Registered</h1>
         <?php
 // Connects to your Database 
-
-        $username = "c43703";
-        $password = "1db23";
-        $author_found = false;
-        $password_correct = false;
-        $con = mysql_connect("localhost", $username, $password) or die("cannot connect");
-        if (!$con) {
-            die('Could not connect: ' . mysql_error());
-        }
-        mysql_select_db($username, $con);
+    error_reporting(0);
+    include('connect.php');
 
 
 //This code runs if the form has been submitted
