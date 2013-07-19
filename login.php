@@ -1,17 +1,11 @@
 <?php
-
-$username = "c43703";
-$password = "1db23";
-$con = mysql_connect("localhost", $username, $password) or die("cannot connect");
-if (!$con) {
-    die('Could not connect: ' . mysql_error());
-}
-mysql_select_db($username, $con);
+error_reporting(0);
+include('connect.php');
 
 if (isset($_POST['submit'])) { // if form has been submitted
     // makes sure they filled it in
     if (!$_POST['username'] | !$_POST['passwd']) {
-        die('You did not fill in a required field.');
+    	die('You did not fill in a required field.');
     }
 
     // checks it against the database
