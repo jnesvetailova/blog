@@ -13,13 +13,9 @@
             We've been hosting the best blogs in the internet since 2013!
         </h5>
         <?php
-        $username = "c43703";
-        $password = "1db23";
-        $con = mysql_connect("localhost", $username, $password) or die("cannot connect");
-        if (!$con) {
-            die('Could not connect: ' . mysql_error());
-        }
-        mysql_select_db($username, $con);
+        error_reporting(0);
+    	include('connect.php');
+
         $result = mysql_query("SELECT * FROM main");
         while ($row = mysql_fetch_array($result)) {
             echo $row['title'];
