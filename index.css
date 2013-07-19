@@ -1,0 +1,32 @@
+h1
+{
+font-family: Helvetica;
+text-align: center;
+font-size: 36px;
+}
+
+h4
+{
+font-family: Helvetica;
+font-size: 16px;
+}
+
+h5
+{
+font-family: Helvetica;
+text-align: center;
+font-size: 16px;
+color: #837A7A;
+}
+
+body
+{
+background-image:url('http://i44.tinypic.com/mw5ksj.png');
+font-size: 12px;
+font-family: Helvetica;
+}
+
+div
+{
+text-align: left;
+}
