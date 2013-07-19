@@ -1,9 +1,9 @@
-
 <!DOCTYPE html>
 <html>
     <head>
         <title>Create</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="index.css">
     </head>
     <body>
 
