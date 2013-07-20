@@ -21,6 +21,14 @@
             if (!$_POST['username'] | !$_POST['password'] | !$_POST['password2'] | !$_POST['title'] | !$_POST['description']) {
                 die('Some fields are missing');
             }
+             
+            if(strlen($_POST['title']) > 50){
+	            die("Title length too long.  Keep title length below 50 characters"); 
+            }
+           
+            if(strlen($_POST['description']) > 50){
+	            die("Description length too long.  Keep description length below 50 characters"); 
+            }
 
             // checks if the username is in use
             if (!get_magic_quotes_gpc()) {
@@ -51,8 +59,6 @@
 
                 $_POST['username'] = addslashes($_POST['username']);
             }
-
-
 
             // now we insert it into the database
 
