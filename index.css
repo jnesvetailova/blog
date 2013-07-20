@@ -26,15 +26,27 @@ font-size: 12px;
 font-family: Helvetica;
 }
 
-div
+#login
 {
 text-align: left;
 }
 
-p
+#status 
 {
 font-family: Helvetica;
-text-align: center;
-font-size: 20px;
-font-weight: bold;
+font-size: 12;
+position:relative;
+float: right;
+/* border: 1 solid; */
+top: 10px;
+
+}
+
+#welcome
+{
+font-family: Helvetica;
+/* border: 1 solid; */
+width:500px;
+position: absolute;
+top:50px;
 }
