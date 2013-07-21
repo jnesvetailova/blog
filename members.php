@@ -16,15 +16,20 @@ if (isset($_COOKIE['ID_my_site'])) {
         if ($pass != $info['password']) {
             header("Location: login.php");
         }
-        //otherwise they are shown the admin area   
+        //otherwise they are shown the admin area     
         else {
             echo "Welcome " . $username . "<p>";
             echo "Your Home:<p>";
             echo "<a href=index.php>Main page</a> <br />";
             echo "<a href=logout.php>Logout</a> <br /> <br />";
-            $result = mysql_query("SELECT * FROM posts");
+            $result = mysql_query("SELECT * FROM posts WHERE blogID = '$memberID'");
             while ($row = mysql_fetch_array($result)) {
-                echo $row['title'];
+                if (isset($_COOKIE['ID_my_site'])) {
+                    echo "<a href=comments.php?postID=" . $row['postID'] . ">" . $row['title'] . "</a>";
+                } else {
+                    echo $row['title'];
+                }
+//                echo $row['title'];
                 echo " on " . $row['date'];
                 echo "<br />";
                 echo $row['content'];
