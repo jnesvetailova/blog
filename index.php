@@ -28,7 +28,7 @@
                             echo $username . " logged in.";
                            echo "<a href=logout.php> Log out </a> <br /><br />";
                             } else {
-                                echo "<a href=login.php class='a1'>Login</a>,<a href=registration.php class='a1'>Register</a><br /><br />";
+                                echo "<a href=login.php class='a1'>Login</a>,<a href=registration.php class='a1'>Register</a>,<a href=contact.html class='a1'>Contact</a><br /><br />";
                             }
                     ?>
                 </div>
