@@ -25,7 +25,7 @@
                         include('connect.php');
                         if (isset($_COOKIE['ID_my_site'])) {
                             $username = $_COOKIE['ID_my_site'];
-                            echo $username . " logged in.";
+                            echo "Hello " . "<a class='a1' href=members.php>$username</a>&nbsp&nbsp&nbsp";
                            echo "<a href=logout.php> Log out </a> <br /><br />";
                             } else {
                                 echo "<a href=login.php class='a1'>Login</a>,<a href=registration.php class='a1'>Register</a>,<a href=contact.html class='a1'>Contact</a><br /><br />";
