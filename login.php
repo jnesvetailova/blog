@@ -29,7 +29,6 @@ if (isset($_POST['submit'])) {
         die('You did not fill in a required field.');
     }
     // checks it against the database
-
 //    if (!get_magic_quotes_gpc()) {
 //        $_POST['email'] = addslashes($_POST['email']);
 //    }
@@ -60,21 +59,32 @@ if (isset($_POST['submit'])) {
 } else {  // if they are not logged in 
 }
 ?>
-<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post"> 
-    <table border="0"> 
-        <tr>
-            <td colspan=2><h1>Login</h1></td>
-        </tr> 
-        <tr>
-            <td>Username:</td>
-            <td> <input type="text" name="username" maxlength="40"> </td>
-        </tr> 
-        <tr>
-            <td>Password:</td>
-            <td> <input type="password" name="pass" maxlength="50"> </td>
-        </tr> 
-        <tr>
-            <td colspan="2" align="right"> <input type="submit" name="submit" value="Login"> </td>
-        </tr> 
-    </table> 
-</form> 
+<html>
+    <head>
+        <title>Archives</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="index.css">
+    </head>
+    <body>
+        <div id="login">
+            <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post"> 
+                <table border="0"> 
+                    <tr>
+                        <td colspan=2><h4>Login</h4></td>
+                    </tr> 
+                    <tr>
+                        <td>Username:</td>
+                        <td> <input type="text" name="username" maxlength="40"> </td>
+                    </tr> 
+                    <tr>
+                        <td>Password:</td>
+                        <td> <input type="password" name="pass" maxlength="50"> </td>
+                    </tr> 
+                    <tr>
+                        <td colspan="2" align="right"> <input type="submit" name="submit" value="Login"> </td>
+                    </tr> 
+                </table> 
+            </form> 
+        </div>
+    </body>
+</html>
