@@ -35,44 +35,58 @@ if (isset($_POST['submit'])) {
     // now we insert it into the database
     $insert = "INSERT INTO main (author, password, title, about)
 
-   		VALUES ('".$_POST['username']."', '".$_POST['pass']."', '".$_POST['title']."', '".$_POST['about']."')";
+     		VALUES ('" . $_POST['username'] . "', '" . $_POST['pass'] . "', '" . $_POST['title'] . "', '" . $_POST['about'] . "')";
 
- 	$add_member = mysql_query($insert);
+    $add_member = mysql_query($insert);
     ?>
     <h1>Registered</h1>
     <p>Thank you, you have registered - you may now <a href="login.php">log in</a> or visit the <a href="index.php">home page</a>.
     </p>
-    
+
     <?php
 } else {
     ?>
-    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-        <table border="0">
-            <tr>
-                <td>Pen Name:</td>
-                <td> <input type="text" name="username" maxlength="60"></td>
-            </tr>
-            <tr>
-                <td>Password:</td>
-                <td><input type="password" name="pass" maxlength="10"></td>
-            </tr>
-            <tr>
-                <td>Confirm Password:</td>
-                <td><input type="password" name="pass2" maxlength="10"></td>
-            </tr>
-            <tr>
-                <td>Blog Title:</td>
-                <td> <input type="text" name="title" maxlength="60"></td>
-            </tr>
-            <tr>
-                <td>What will your blog be about?</td>
-                <td> <input type="text" name="about" maxlength="60"></td>
-            </tr>
-            <tr>
-                <th colspan=2><input type="submit" name="submit" value="Register"></th>
-            </tr> 
-        </table>
-    </form>
+    <html>
+        <head>
+            <title>Archives</title>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <link rel="stylesheet" type="text/css" href="index.css">
+        </head>
+        <body>
+            <div id="register">
+                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+                    <table border="0">
+                        <tr>
+                            <td colspan=2><h4>Register Account</h4></td>
+                        </tr> 
+                        <tr>
+                            <td>Pen Name:</td>
+                            <td> <input type="text" name="username" maxlength="60"></td>
+                        </tr>
+                        <tr>
+                            <td>Password:</td>
+                            <td><input type="password" name="pass" maxlength="10"></td>
+                        </tr>
+                        <tr>
+                            <td>Confirm Password:</td>
+                            <td><input type="password" name="pass2" maxlength="10"></td>
+                        </tr>
+                        <tr>
+                            <td>Blog Title:</td>
+                            <td> <input type="text" name="title" maxlength="60"></td>
+                        </tr>
+                        <tr>
+                            <td>What will your blog be about?</td>
+                            <td> <input type="text" name="about" maxlength="60"></td>
+                        </tr>
+                        <tr>
+                            <th colspan=2><input type="submit" name="submit" value="Register"></th>
+                        </tr> 
+                    </table>
+                </form>
+            </div>
+        </body>
+    </html>
     <?php
 }
 ?> 
