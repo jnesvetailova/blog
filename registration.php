@@ -20,6 +20,16 @@ if (isset($_POST['submit'])) {
     if ($check2 != 0) {
         die('Sorry, the username ' . $_POST['username'] . ' is already in use.');
     }
+    
+    // checks if the blog title is in use
+    $titlecheck = $_POST['title'];
+    $check3 = mysql_query("SELECT author FROM main WHERE title = '$titlecheck'") or die(mysql_error());
+    $check4 = mysql_num_rows($check3);
+
+    //if the name exists it gives an error
+    if ($check4 != 0) {
+        die('Sorry, the title ' . $_POST['title'] . ' is already in use.');
+    }
 
     // this makes sure both passwords entered match
     if ($_POST['pass'] != $_POST['pass2']) {
