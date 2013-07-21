@@ -7,45 +7,51 @@
     </head>
     <body>
         <h1>
-            Welcome to The Archives
+            Welcome to The Archives 
         </h1>
         <h5>
-            We've been hosting the best blogs in the internet since 2013!
+            We've been hosting the best blogs in the internet since 2013! <br />
+            The time is now <?php 
+            date_default_timezone_set('America/New_York'); 
+            $mysqltime = date("Y-m-d H:i:s");
+            echo $mysqltime;?>
         </h5>
+        <p>
+            <?php
+            //checks cookies to make sure they are logged in 
+            include('connect.php');
+            if (isset($_COOKIE['ID_my_site'])) {
+                $username = $_COOKIE['ID_my_site'];
+                echo $username . " logged in.";
+                echo "<a href=logout.php> Log out </a>";
+            } else {
+                echo "<a href=login.php>Login</a>,<a href=registration.php>Register</a>";
+            }
+            ?>
+            <!--            <a href="login.php">Login</a>,<a href="registration.php">Register</a>-->
+        </p>
         <?php
         error_reporting(0);
-    	include('connect.php');
+        include('connect.php');
 
         $result = mysql_query("SELECT * FROM main");
+        //if logged in, let blogs be clickable
+
         while ($row = mysql_fetch_array($result)) {
-            echo $row['title'];
+            if (isset($_COOKIE['ID_my_site'])) {
+                echo "<a href=pages.php?blogID=" . $row['blogID'] . ">" . $row['title'] . "</a>";
+            } else {
+                echo $row['title'];
+            }
+
+//                echo "<a href=\"pages.php?blogid=".$row['blogID']."\">Click </a>";
             echo " by " . $row['author'];
             echo "<br />";
             echo $row['description'];
             echo "<br /><br />";
         }
+
         mysql_close($con);
         ?>
-        <div>
-            <h4>Login</h4>
-            <form action="login.php" method="POST">
-                Username: <input type="text" name="username"></input><br />
-                Password: <input type="password" name="passwd"></input><br />
-<!--                <button value="Submit" class="send_button" onclick="this.form.submit();">Login</button>-->
-                <input type="submit" name="submit" value="Login">
-            </form>
-        </div>
-        <div>
-            <h4>Register Account!</h4>
-            <form action="create.php" method="POST">
-                Please enter a username: <input type="text" name="username"></input><br />
-                Choose a password: <input type="password" name="password"></input><br />
-                Confirm password: <input type="password" name="password2"></input><br />
-                Name your blog: <input type="text" name="title"></input><br />
-                What will your blog be about? <input type="text" name="description"></input><br />
-                <!--                <button value="Submit" class="send_button" onclick="this.form.submit();">Register</button>-->
-                <input type="submit" name="submit" value="Register">
-            </form>
-        </div>
     </body>
 </html>
